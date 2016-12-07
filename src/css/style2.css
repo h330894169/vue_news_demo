@@ -1,0 +1,21 @@
+body,html{
+    font: 28px/1.5 '微软雅黑';
+    color: red;
+}
+body{
+    background: url(../img/title.png) no-repeat;
+    transform: translate3d(0,0,0);
+    box-sizing: border-box;
+}
+a {
+    display: flex;
+}
+.back-transition {
+    transition: all .5s ease;
+}
+.back-enter{
+    opacity: 1;
+}
+.back-leave {
+    opacity: 0;
+}

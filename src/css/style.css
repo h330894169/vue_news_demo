@@ -1,0 +1,19 @@
+body,html{
+    font: 28px/1.5 '微软雅黑';
+    color: #666;
+}
+body{
+    background: url(../img/title.png) no-repeat;
+    transform: translate3d(0,0,0);
+    box-sizing: border-box;
+}
+a {
+    display: flex;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+    opacity: 0
+}

@@ -1,0 +1,67 @@
+{
+  "name": "lihua",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "gulp watch",
+    "build:all": "npm run build:dist & npm run build:demo",
+    "build:dist": "gulp webpack -p",
+    "build:demo": "gulp webpack -p -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "jerry"
+  },
+  "keywords": [
+    "vue_news_demo"
+  ],
+  "author": "lihua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h330894169/vue_news_demo/issues"
+  },
+  "homepage": "https://github.com/h330894169/vue_news_demo#readme",
+  "dependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.0",
+    "postcss-loader": "^1.1.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vue": "^2.0.3",
+    "vue-loader": "^9.7.0",
+    "webpack": "^1.13.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-runtime": "^6.20.0",
+    "browser-sync": "^2.18.2",
+    "clean": "^4.0.2",
+    "glob": "^7.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-util": "^3.0.7",
+    "http-proxy": "^1.16.2",
+    "jsface": "^2.4.9",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "moment": "^2.17.1",
+    "node-sass": "^3.13.0",
+    "querystringify": "^0.0.4",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0",
+    "vue-style-loader": "^1.0.0",
+    "yargs": "^6.5.0"
+  }
+}

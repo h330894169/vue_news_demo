@@ -1,0 +1,21 @@
+{
+  "name": "lihua",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "lihua"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "vue_news_demo"
+  ],
+  "homepage": "https://github.com/h330894169/vue_news_demo",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -3,9 +3,16 @@
  * Created by test on 2016/6/1.
  */
 require("font-awesome/css/font-awesome.min.css");
-    require("../css/style.css");
+    require("../components/header/style.css");
+    //require("../../.tmp/vendor.dll.js")
+var $ = require('jquery');
+var vue = require('vue');
+var r = require('vue-router');
+console.log(vue,r);
+debugger
+    //$("body").html("123")
 /**
-var jquery = require('jquery');
+
 console.log(jquery);
 //alert(jQuery)
 

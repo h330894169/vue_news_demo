@@ -1,0 +1,41 @@
+'use strict';
+
+//查询机票详情
+export const INIT_FLIGHT_DETAIL_ASYNC = 'INIT_FLIGHT_DETAIL_ASYNC';
+
+export const INIT_FLIGHTS_DETAIL_ASYNC = 'INIT_FLIGHTS_DETAIL_ASYNC';
+
+//获取退改规则
+export const INIT_REFUND_RULES_ASYNC = 'INIT_REFUND_RULES_ASYNC';
+
+//获取发票信息
+export const INIT_INVOICE_ASYNC = 'INIT_INVOICE_ASYNC';
+
+//获取下单页数据
+export const INIT_HOTEL_ORDER_INFO = 'INIT_HOTEL_ORDER_INFO';
+
+//获取订单列表数据
+export const GET_ORDER_LIST = 'GET_ORDER_LIST';
+
+//获取保险信息
+export const GET_INSURANCE_PRODUCT_ASYNC = 'GET_INSURANCE_PRODUCT_ASYNC';
+
+//获取出差信息
+export const GET_SIMPLEDETAIL_ASYNC = 'GET_SIMPLEDETAIL_ASYNC';
+
+//选择退票原因
+export const GET_REFUNDREASONS_ASYNC = 'GET_REFUNDREASONS_ASYNC';
+
+//查询酒店订单详情
+export const GET_HOTEL_ORDER_DETAIL = 'GET_HOTEL_ORDER_DETAIL';
+
+//查询酒店订单消费信息
+export const GET_HOTEL_ORDER_COST_DETAIL = 'GET_HOTEL_ORDER_COST_DETAIL';
+//查询酒店预填信息
+export const INIT_HOTEL_INVOICE = "INIT_HOTEL_INVOICE"
+//支付酒店补寄发票
+export  const POST_HOTEL_INVOICE = "POST_HOTEL_INVOICE"
+//支付酒店变更订单
+export  const PAY_HOTEL_CHANGE_ORDER = "PAY_HOTEL_CHANGE_ORDER"
+//检测订单月支付状态
+export  const  CHECK_MONTH_PAY_STATUS = "CHECK_MONTH_PAY_STATUS"

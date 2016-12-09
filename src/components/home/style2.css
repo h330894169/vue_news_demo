@@ -3,7 +3,7 @@ body,html{
     color: red;
 }
 body{
-    background: url(../img/title.png) no-repeat;
+    background: url(../../common/img/title.png) no-repeat;
     transform: translate3d(0,0,0);
     box-sizing: border-box;
 }

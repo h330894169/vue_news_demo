@@ -1,9 +1,12 @@
 import $ from "jquery";
 import Vue from 'vue';
 import Router from "vue-router";
-import App from '../app';
-
+import App from './index/app';
+import store from 'common/vuex/store.js';
+import "font-awesome/css/font-awesome.css"
+require("../../components/header/style.css");
 Vue.use(Router)
+
 const a = {
     template:'<i>a</i>'
 }
@@ -11,7 +14,7 @@ const a = {
 const router = new Router({
     routes:[{
         path: '/header',
-        component: require('../components/myheader.vue'),
+        component: require('../../components/header/myheader.vue'),
         children: [
             {
                 // 当 /user/:id/profile 匹配成功，
@@ -21,14 +24,14 @@ const router = new Router({
             }]
     },  {
         path: '/home',
-        component: require('../components/home.vue')
+        component: require('../../components/home/home.vue')
     }]
 })
 /* eslint-disable no-new */
 new Vue({
     router,
     el: '#app',
-    //store,
+    store,
     render: h => h(App)
 })
 

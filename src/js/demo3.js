@@ -1,8 +1,8 @@
 import $ from "jquery";
 import Vue from 'vue';
 import Router from "vue-router";
-import App from '../app.vue';
-import store from '../vuex/store.js';
+import App from '../modules/train/index/app.vue';
+import store from '../common/vuex/store.js';
 
 Vue.use(Router)
 const a = {
@@ -12,7 +12,7 @@ const a = {
 const router = new Router({
     routes:[{
                 path: '/header',
-                component: require('../components/myheader.vue'),
+                component: require('../components/header/myheader.vue'),
                 children: [
                     {
                         // 当 /user/:id/profile 匹配成功，
@@ -22,7 +22,7 @@ const router = new Router({
                     }]
             },  {
                 path: '/home',
-                component: require('../components/home.vue')
+                component: require('../components/home/home.vue')
         }]
 })
 /* eslint-disable no-new */

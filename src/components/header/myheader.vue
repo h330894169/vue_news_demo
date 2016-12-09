@@ -45,6 +45,7 @@ ul li{
 import $ from "jquery"
 import { mapGetters,mapActions } from 'vuex'
 
+
 export default {
     props:{
         "testData":{
@@ -52,6 +53,7 @@ export default {
         default:()=>{return {url:"url"}}
         }
     },
+
     data(){
         return {
             msg:"msg",
@@ -72,7 +74,7 @@ export default {
     },
     created:function(){
         require.ensure([], function(require) {
-            var css = require('../css/style2.css');
+            var css = require('../home/style2.css');
             var ng = require('angular');
             // todo ...
         });

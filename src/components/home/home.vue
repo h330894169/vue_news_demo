@@ -1,5 +1,5 @@
 <style scoped="">
-    @import url(../css/style.css);
+    @import url(../header/style.css);
     .clearfix:after{
         content: '';
         display: block;

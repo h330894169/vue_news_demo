@@ -15,7 +15,7 @@ if(is_dev){
 }
 
 
-gulp.task("webpack",['clean'], function(callback) {    // run webpack
+gulp.task("webpack",['clean','copy:3rd'], function(callback) {    // run webpack
     var flag = false;
     var compiler = webpack(
         require("./webpack.config.js")
@@ -30,12 +30,11 @@ gulp.task("webpack",['clean'], function(callback) {    // run webpack
             }));
             !flag && callback();
             flag = true;
-    })/** .watch(100,function(err, stats) {
+        })/** .watch(100,function(err, stats) {
         console.log("------>")
     });**/;
     //callback();
 });
-
 
 gulp.task("webpack-dll",['clean'], function(callback) {    // run webpack
     var compiler = webpack(
@@ -60,6 +59,12 @@ gulp.task("clean", function(){
     if(!is_dev)return;
     return gulp.src(config.serverDir)
         .pipe(clean());
+})
+
+gulp.task("copy:3rd", function(){
+    if(is_dev)return;
+    return gulp.src("bower_components/**")
+        .pipe(gulp.dest(config.dist3rd));
 })
 
 gulp.task('watch', ['webpack'],function() {

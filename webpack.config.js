@@ -67,7 +67,7 @@ var entryFile = function () {
 
 module.exports  = {
     //cheap-eval-source-map
-    devtool:is_dev?"source-map":'eval',
+    //devtool:"source-map",//is_dev?"source-map":'eval',
     // configuration
     //页面入口文件配置
     entry: entryFile.js,
@@ -99,6 +99,7 @@ module.exports  = {
             //{ test: /\.css$/, loader: "style-loader!css-loader" },
             //{ test: /\.js$/, loader: 'jsx-loader?harmony' },
             { test: /\.html/, loader: 'html-loader' },
+            { test: /\.jade/, loader: 'jade-loader' },
             //{ test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
             //{test: /\.less$/, loader: "style!css!less"},
             { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&minetype=application/font-woff&name=/static'+ config.version +'/fonts/[name]'+getHashName()+'.[ext]' },
@@ -117,6 +118,7 @@ module.exports  = {
     },
     postcss:[autoprefixer({browsers:['last 15 versions']})],
     vue: {
+		
         loaders: css_util.cssLoaders({
             sourceMap: is_dev?true:false,
             extract: true
@@ -135,6 +137,7 @@ module.exports  = {
         //jQuery: 'jQuery' //或者jquery:'jQuery',
     },
     plugins: [
+        new webpack.ContextReplacementPlugin( /moment[\/\\]locale$/, /zh-cn/ ),
         /**
         new webpack.DllReferencePlugin({
             context: __dirname,
@@ -166,6 +169,7 @@ module.exports  = {
                     if(externalsList.length == jsArray.length) return false;
                 });
                 if(!is_dev){
+                    //TODO 这里如果后面升级第三方了的话，可以加一个版本号来控制第三方框架的缓存
                     asset.js.unshift(config.cdnPath+"/3rd/??"+jsArray.join(","))
                 }else{
                     jsArray.reverse().forEach(item=>{
@@ -233,6 +237,7 @@ module.exports  = {
         extensions: ['', '.js', '.json', '.scss','.vue','.css'],
         alias: {
             common:path.resolve(__dirname,"src/common"),
+            components:path.resolve(__dirname,"src/components"),
             vue: path.resolve(__dirname,"./bower_components/vue/dist/vue.min.js"),
             bower: bowerRoot,
             "vue-router":path.resolve(__dirname,"./bower_components/vue-router/dist/vue-router.min"),
@@ -249,4 +254,8 @@ module.exports  = {
     resolveLoader: {
         fallback: [path.join(__dirname, './node_modules'),path.join(__dirname, './bower_components')]
     }
+}
+
+if(is_dev){
+    module.exports.devtool = "source-map"//"eval";
 }

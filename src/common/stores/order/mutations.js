@@ -2,7 +2,7 @@
 
 // import moment from 'moment';
 import * as types from './mutation-types';
-import http from 'javascripts/commons/http';
+import http from 'common/js/http';
 
 export const state = {
   //机票详情

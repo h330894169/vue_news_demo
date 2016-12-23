@@ -1,8 +1,7 @@
 'use strict';
 
-import moment from 'moment';
 import * as types from './mutation-types';
-import http from 'javascripts/commons/http';
+import http from 'common/js/http';
 
 export const state = {
   employees: [],
@@ -105,11 +104,14 @@ export const actions = {
         };
       }
       if (!state.dates.begin) {
-        const current = moment();
-        state.dates = {
-          begin: current.format('YYYY-MM-DD'),
-          end: current.add(1, 'days').format('YYYY-MM-DD')
-        };
+        require.ensure([], function(require) {
+            var moment =  require('moment');
+            const current = moment();
+            state.dates = {
+                begin: current.format('YYYY-MM-DD'),
+                end: current.add(1, 'days').format('YYYY-MM-DD')
+            };
+        })
       }
     }
   }

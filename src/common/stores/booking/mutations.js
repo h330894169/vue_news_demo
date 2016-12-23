@@ -1,9 +1,9 @@
 'use strict';
 
 import * as types from './mutation-types';
-import http from 'javascripts/commons/http';
-import EasyStorage from 'javascripts/commons/easy-storage';
-import toast from 'javascripts/widgets/toast';
+import http from 'common/js/http';
+import EasyStorage from 'common/js/easy-storage';
+import toast from 'common/widgets/toast';
 import qs from 'querystringify';
 
 var hotelOrderData = new EasyStorage('hotelOrderData', 'session');

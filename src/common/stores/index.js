@@ -4,10 +4,11 @@ import Vuex from 'vuex';
 import booking from './booking/mutations';
 import btrip from './btrip/mutations';
 import order from './order/mutations';
+import train from './train/mutations';
 
 Vue.use(Vuex);
 export default new Vuex.Store({
     modules:{
-        booking,btrip,order
+        booking,btrip,order,train
     }
 });

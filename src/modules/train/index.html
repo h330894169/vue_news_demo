@@ -2,14 +2,48 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>webpack demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="referrer" content="unsafe-url">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>火车票</title>
+    <script>
+        'use strict';
+        !(function (doc,win) {
+            //100px 基准像素
+            var docEl =doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function(){
+                    var clientWidth = docEl.clientWidth>750 ? 750 :docEl.clientWidth;
+                    if (!clientWidth) {return};
+                    docEl.style.fontSize = 100 * (clientWidth/750) + 'px';
+                };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })
+        (document,window);
+    </script>
+    <!--
+    <script src="../../common/js/rem.100.js"></script>
+    -->
 </head>
-<body ng-controller="demo"><i class="fa fa-refresh"></i>
-webpack demo 11123441443{{title}}  a1s1
+<body ontouchstart="">
+
 <div>
-    <i>dialog</i>
-    <img src="../../common/img/title.png">
-    <div id="app"></div>
+    <div id="app">
+        <transition name="fade"  mode="out-in">
+            <!---->
+            <keep-alive>
+                <router-view class="view">
+                </router-view>
+            </keep-alive>
+
+
+        </transition>
+    </div>
 </div>
 </body>
 </html>
